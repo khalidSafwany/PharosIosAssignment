@@ -3,19 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		FE29391D28B02B5A00D606BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29391C28B02B5A00D606BD /* AppDelegate.swift */; };
 		FE29391F28B02B5A00D606BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29391E28B02B5A00D606BD /* SceneDelegate.swift */; };
-		FE29392128B02B5A00D606BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29392028B02B5A00D606BD /* ViewController.swift */; };
-		FE29392428B02B5A00D606BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE29392228B02B5A00D606BD /* Main.storyboard */; };
+		FE29392128B02B5A00D606BD /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29392028B02B5A00D606BD /* CitiesViewController.swift */; };
 		FE29392728B02B5A00D606BD /* PharosIosAssignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE29392528B02B5A00D606BD /* PharosIosAssignment.xcdatamodeld */; };
 		FE29392928B02B5B00D606BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE29392828B02B5B00D606BD /* Assets.xcassets */; };
 		FE29392C28B02B5B00D606BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE29392A28B02B5B00D606BD /* LaunchScreen.storyboard */; };
 		FE29393728B02B5B00D606BD /* PharosIosAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29393628B02B5B00D606BD /* PharosIosAssignmentTests.swift */; };
 		FE29394228B02B5B00D606BD /* PharosIosAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29394128B02B5B00D606BD /* PharosIosAssignmentUITests.swift */; };
+		FE29396628B030EA00D606BD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29396528B030EA00D606BD /* City.swift */; };
+		FE29396E28B038AC00D606BD /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29396D28B038AC00D606BD /* Coordinates.swift */; };
+		FE29397728B0400400D606BD /* CitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29397628B0400400D606BD /* CitiesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +41,7 @@
 		FE29391928B02B5A00D606BD /* PharosIosAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PharosIosAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE29391C28B02B5A00D606BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE29391E28B02B5A00D606BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE29392028B02B5A00D606BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FE29392328B02B5A00D606BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE29392028B02B5A00D606BD /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		FE29392628B02B5A00D606BD /* PharosIosAssignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PharosIosAssignment.xcdatamodel; sourceTree = "<group>"; };
 		FE29392828B02B5B00D606BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE29392B28B02B5B00D606BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,9 @@
 		FE29393D28B02B5B00D606BD /* PharosIosAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PharosIosAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE29394128B02B5B00D606BD /* PharosIosAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharosIosAssignmentUITests.swift; sourceTree = "<group>"; };
 		FE29394328B02B5B00D606BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE29396528B030EA00D606BD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		FE29396D28B038AC00D606BD /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		FE29397628B0400400D606BD /* CitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +105,11 @@
 		FE29391B28B02B5A00D606BD /* PharosIosAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				FE29397528B03FCD00D606BD /* Cells */,
+				FE29396428B0309C00D606BD /* POJOs */,
 				FE29391C28B02B5A00D606BD /* AppDelegate.swift */,
 				FE29391E28B02B5A00D606BD /* SceneDelegate.swift */,
-				FE29392028B02B5A00D606BD /* ViewController.swift */,
-				FE29392228B02B5A00D606BD /* Main.storyboard */,
+				FE29392028B02B5A00D606BD /* CitiesViewController.swift */,
 				FE29392828B02B5B00D606BD /* Assets.xcassets */,
 				FE29392A28B02B5B00D606BD /* LaunchScreen.storyboard */,
 				FE29392D28B02B5B00D606BD /* Info.plist */,
@@ -129,6 +134,23 @@
 				FE29394328B02B5B00D606BD /* Info.plist */,
 			);
 			path = PharosIosAssignmentUITests;
+			sourceTree = "<group>";
+		};
+		FE29396428B0309C00D606BD /* POJOs */ = {
+			isa = PBXGroup;
+			children = (
+				FE29396528B030EA00D606BD /* City.swift */,
+				FE29396D28B038AC00D606BD /* Coordinates.swift */,
+			);
+			path = POJOs;
+			sourceTree = "<group>";
+		};
+		FE29397528B03FCD00D606BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FE29397628B0400400D606BD /* CitiesTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +232,7 @@
 				};
 			};
 			buildConfigurationList = FE29391428B02B5A00D606BD /* Build configuration list for PBXProject "PharosIosAssignment" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -236,7 +258,6 @@
 			files = (
 				FE29392C28B02B5B00D606BD /* LaunchScreen.storyboard in Resources */,
 				FE29392928B02B5B00D606BD /* Assets.xcassets in Resources */,
-				FE29392428B02B5A00D606BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE29392128B02B5A00D606BD /* ViewController.swift in Sources */,
+				FE29392128B02B5A00D606BD /* CitiesViewController.swift in Sources */,
+				FE29396628B030EA00D606BD /* City.swift in Sources */,
 				FE29391D28B02B5A00D606BD /* AppDelegate.swift in Sources */,
+				FE29396E28B038AC00D606BD /* Coordinates.swift in Sources */,
 				FE29392728B02B5A00D606BD /* PharosIosAssignment.xcdatamodeld in Sources */,
 				FE29391F28B02B5A00D606BD /* SceneDelegate.swift in Sources */,
+				FE29397728B0400400D606BD /* CitiesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +324,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FE29392228B02B5A00D606BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE29392328B02B5A00D606BD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FE29392A28B02B5B00D606BD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -425,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
