@@ -11,15 +11,19 @@ class CitiesViewModel: NSObject {
     
     private var pageNumber: Int?
     private var fileManger: CitiesFileManager?
-    private var mainCitiesList:[City]?
+    private var mainCitiesList:[City]?{
+        didSet{
+            DispatchQueue.global().async {
+                self.fileManger?.cacheProducts(with: self.mainCitiesList ?? [City]())
+            }
+        }
+    }
     private var citiesList:[City]?{
         
         didSet{
             
             self.pageNumber? += 1
-            DispatchQueue.global().async {
-                self.fileManger?.cacheProducts(with: self.citiesList ?? [City]())
-            }
+           
             
             self.bindViewModelSuccessToView()
         }
@@ -89,7 +93,7 @@ class CitiesViewModel: NSObject {
                 citiesList = mainCitiesList
             }
             else{
-            citiesList = mainCitiesList?.filter({($0.getCityName()?.contains(searchText) ?? false)})
+            citiesList = mainCitiesList?.filter({($0.getCityName()?.hasPrefix(searchText) ?? false)})
             }
         }else{
             citiesList = mainCitiesList

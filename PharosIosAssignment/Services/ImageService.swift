@@ -19,8 +19,7 @@ final class ImageService {
         
         // MARK: - Public function
         
-        /// downloadImage function will download the thumbnail images
-        /// returns Result<Data> as completion handler
+       
         public static func downloadImage(url: URL,
                                          completion: @escaping (Result<Data>) -> Void) {
             ImageService.getData(url: url) { data, response, error in

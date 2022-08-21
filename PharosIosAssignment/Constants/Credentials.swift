@@ -8,7 +8,7 @@
 import Foundation
 
 struct Credentials {
-    private var apiKey = "AIzaSyDBwhnSvtg2vHHWX5JpfzEjVcLRiYlXJOw"
+    static private  var apiKey = "AIzaSyDBwhnSvtg2vHHWX5JpfzEjVcLRiYlXJOw"
     
-    func getAPIKey() -> String{apiKey}
+    static func getAPIKey() -> String{apiKey}
 }

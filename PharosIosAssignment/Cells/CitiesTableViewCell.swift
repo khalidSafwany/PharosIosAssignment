@@ -67,10 +67,10 @@ class CitiesTableViewCell: UITableViewCell {
         
         self.CityCellNameLabel.text = cellCity.getCityName()
 //        self.cityLocationImageView.image = UIImage(named: "PassportID")
-       
-        self.cityLocationImageView.loadThumbnail(urlSting: "https://images.unsplash.com/5/unsplash-bonus.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb")
+        if let cityName = cellCity.getCityName(){
+        self.cityLocationImageView.loadThumbnail(urlSting: URLs.getStaticMapImageURLSring(for: cityName))
             
-        
+        }
     }
 
     

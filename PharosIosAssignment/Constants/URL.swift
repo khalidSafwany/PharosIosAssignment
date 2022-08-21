@@ -19,12 +19,12 @@ struct URLs {
         
     }
     
-//    static func getStaticMapImage() -> String{
-//        
-//        var url = "https://maps.googleapis.com/maps/api/staticmap?"
-//        return url
-//        
-//    }
+    static func getStaticMapImageURLSring(for cityName: String) -> String{
+        
+        let url = "https://maps.googleapis.com/maps/api/staticmap?center=\(cityName),CA&zoom=14&size=400x400&key=\(Credentials.getAPIKey())"
+        return url
+        
+    }
     
     static func getPresistentFilePath() -> String{
         presistentFilePath

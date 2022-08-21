@@ -37,12 +37,22 @@ class CItyMapViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         configureMapView()
-        theMapView.addAnnotation(mapObject!)
+        
         self.theMapView.showAnnotations(self.theMapView.annotations, animated: true)
         self.theMapView.setCenter(mapObject!.coordinate, animated: true)
         self.theMapView.isZoomEnabled = true
         self.title = selectedCity.getCityName()
         self.view.backgroundColor = UIColor.white
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = selectedCity.getCityName()
+        theMapView.addAnnotation(mapObject!)
+        self.theMapView.showAnnotations(self.theMapView.annotations, animated: true)
+        self.theMapView.setCenter(mapObject!.coordinate, animated: true)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.theMapView.removeAnnotation(mapObject!)
     }
     
 
@@ -58,11 +68,6 @@ class CItyMapViewController: UIViewController {
             }
         theMapView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
         theMapView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
-
-        theMapView.showsUserLocation = true
-        theMapView.userTrackingMode = .follow
-        let region = MKCoordinateRegion( center: mapObject!.coordinate, latitudinalMeters: CLLocationDistance(exactly: 5000)!, longitudinalMeters: CLLocationDistance(exactly: 5000)!)
-        theMapView.setRegion(theMapView.regionThatFits(region), animated: true)
 
         theMapView.frame = view.frame
         
