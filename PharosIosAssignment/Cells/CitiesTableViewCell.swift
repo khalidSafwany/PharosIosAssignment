@@ -9,6 +9,8 @@ import UIKit
 
 class CitiesTableViewCell: UITableViewCell {
 
+//    private var isLoading = false
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,11 +25,60 @@ class CitiesTableViewCell: UITableViewCell {
         setCityLocationImageConstrains()
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.borderWidth = 1
+        
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
+    
+    private var cityLocationImageView: UIImageView = {
+       let image = UIImageView()
+       
+       return image
+       
+   }()
+    
+    private let CityCellNameLabel: UILabel = {
+        
+        let label = UILabel()
+        label.textAlignment = .center
+        label.numberOfLines = 0
+
+        
+        return label
+        
+    }()
+    
+//    override func prepareForReuse() {
+//        self.cityLocationImageView.image = nil
+//        self.isLoading = true;
+//    }
+    func setMyDate(cellCity: City){
+        
+        self.CityCellNameLabel.text = cellCity.getCityName()
+//        self.cityLocationImageView.image = UIImage(named: "PassportID")
+       
+        self.cityLocationImageView.loadThumbnail(urlSting: "https://images.unsplash.com/5/unsplash-bonus.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb")
+            
+        
+    }
+
+    
+    
+    
+    
+    
+ //   #####################################
     
     func setCityLocationImageConstrains(){
         contentView.addSubview(cityLocationImageView)
@@ -47,35 +98,4 @@ class CitiesTableViewCell: UITableViewCell {
         CityCellNameLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.9).isActive = true
     }
     
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-    
-    private let cityLocationImageView: UIImageView = {
-       let image = UIImageView()
-       
-       return image
-       
-   }()
-    
-    private let CityCellNameLabel: UILabel = {
-        
-        let label = UILabel()
-        label.textAlignment = .center
-
-        
-        return label
-        
-    }()
-    
-    
-    func setMyDate(){
-        
-        self.CityCellNameLabel.text = "IAM A CELL"
-        self.cityLocationImageView.image = UIImage(named: "PassportID")
-    }
-
 }

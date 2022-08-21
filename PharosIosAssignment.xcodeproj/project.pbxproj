@@ -18,6 +18,16 @@
 		FE29396628B030EA00D606BD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29396528B030EA00D606BD /* City.swift */; };
 		FE29396E28B038AC00D606BD /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29396D28B038AC00D606BD /* Coordinates.swift */; };
 		FE29397728B0400400D606BD /* CitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE29397628B0400400D606BD /* CitiesTableViewCell.swift */; };
+		FE308F7F28B1634000FE3F33 /* CitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE308F7E28B1634000FE3F33 /* CitiesService.swift */; };
+		FE308F8828B163A100FE3F33 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE308F8728B163A100FE3F33 /* URL.swift */; };
+		FE308FA028B1671E00FE3F33 /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE308F9F28B1671E00FE3F33 /* CitiesViewModel.swift */; };
+		FE308FA828B1A87800FE3F33 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE308FA728B1A87800FE3F33 /* Credentials.swift */; };
+		FE308FB328B1B39000FE3F33 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE308FB228B1B39000FE3F33 /* ImageService.swift */; };
+		FE308FBE28B23E0200FE3F33 /* UIImageView + Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE308FBD28B23E0200FE3F33 /* UIImageView + Cache.swift */; };
+		FE308FD228B25A8600FE3F33 /* FileManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE308FD128B25A8600FE3F33 /* FileManger.swift */; };
+		FE308FDA28B25EB900FE3F33 /* CitiesViewController + searchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE308FD928B25EB900FE3F33 /* CitiesViewController + searchBar.swift */; };
+		FE308FE028B2634A00FE3F33 /* CItyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE308FDF28B2634A00FE3F33 /* CItyMapViewController.swift */; };
+		FE308FE528B2681900FE3F33 /* MapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE308FE428B2681900FE3F33 /* MapObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +65,16 @@
 		FE29396528B030EA00D606BD /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		FE29396D28B038AC00D606BD /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		FE29397628B0400400D606BD /* CitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCell.swift; sourceTree = "<group>"; };
+		FE308F7E28B1634000FE3F33 /* CitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesService.swift; sourceTree = "<group>"; };
+		FE308F8728B163A100FE3F33 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		FE308F9F28B1671E00FE3F33 /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
+		FE308FA728B1A87800FE3F33 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		FE308FB228B1B39000FE3F33 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		FE308FBD28B23E0200FE3F33 /* UIImageView + Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Cache.swift"; sourceTree = "<group>"; };
+		FE308FD128B25A8600FE3F33 /* FileManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManger.swift; sourceTree = "<group>"; };
+		FE308FD928B25EB900FE3F33 /* CitiesViewController + searchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CitiesViewController + searchBar.swift"; sourceTree = "<group>"; };
+		FE308FDF28B2634A00FE3F33 /* CItyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CItyMapViewController.swift; sourceTree = "<group>"; };
+		FE308FE428B2681900FE3F33 /* MapObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +125,16 @@
 		FE29391B28B02B5A00D606BD /* PharosIosAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				FE308FDE28B2632500FE3F33 /* ViewControllers */,
+				FE308FD028B25A7800FE3F33 /* FileManger */,
+				FE308FBC28B23DE400FE3F33 /* Extensions */,
+				FE308F9E28B1670900FE3F33 /* ViewModels */,
+				FE308F8628B1639400FE3F33 /* Constants */,
+				FE308F7D28B1632600FE3F33 /* Services */,
 				FE29397528B03FCD00D606BD /* Cells */,
 				FE29396428B0309C00D606BD /* POJOs */,
 				FE29391C28B02B5A00D606BD /* AppDelegate.swift */,
 				FE29391E28B02B5A00D606BD /* SceneDelegate.swift */,
-				FE29392028B02B5A00D606BD /* CitiesViewController.swift */,
 				FE29392828B02B5B00D606BD /* Assets.xcassets */,
 				FE29392A28B02B5B00D606BD /* LaunchScreen.storyboard */,
 				FE29392D28B02B5B00D606BD /* Info.plist */,
@@ -141,6 +166,7 @@
 			children = (
 				FE29396528B030EA00D606BD /* City.swift */,
 				FE29396D28B038AC00D606BD /* Coordinates.swift */,
+				FE308FE428B2681900FE3F33 /* MapObject.swift */,
 			);
 			path = POJOs;
 			sourceTree = "<group>";
@@ -151,6 +177,58 @@
 				FE29397628B0400400D606BD /* CitiesTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FE308F7D28B1632600FE3F33 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FE308F7E28B1634000FE3F33 /* CitiesService.swift */,
+				FE308FB228B1B39000FE3F33 /* ImageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FE308F8628B1639400FE3F33 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FE308F8728B163A100FE3F33 /* URL.swift */,
+				FE308FA728B1A87800FE3F33 /* Credentials.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		FE308F9E28B1670900FE3F33 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FE308F9F28B1671E00FE3F33 /* CitiesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FE308FBC28B23DE400FE3F33 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FE308FBD28B23E0200FE3F33 /* UIImageView + Cache.swift */,
+				FE308FD928B25EB900FE3F33 /* CitiesViewController + searchBar.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FE308FD028B25A7800FE3F33 /* FileManger */ = {
+			isa = PBXGroup;
+			children = (
+				FE308FD128B25A8600FE3F33 /* FileManger.swift */,
+			);
+			path = FileManger;
+			sourceTree = "<group>";
+		};
+		FE308FDE28B2632500FE3F33 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE29392028B02B5A00D606BD /* CitiesViewController.swift */,
+				FE308FDF28B2634A00FE3F33 /* CItyMapViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,13 +360,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE308F7F28B1634000FE3F33 /* CitiesService.swift in Sources */,
 				FE29392128B02B5A00D606BD /* CitiesViewController.swift in Sources */,
+				FE308F8828B163A100FE3F33 /* URL.swift in Sources */,
+				FE308FA828B1A87800FE3F33 /* Credentials.swift in Sources */,
 				FE29396628B030EA00D606BD /* City.swift in Sources */,
 				FE29391D28B02B5A00D606BD /* AppDelegate.swift in Sources */,
 				FE29396E28B038AC00D606BD /* Coordinates.swift in Sources */,
+				FE308FD228B25A8600FE3F33 /* FileManger.swift in Sources */,
+				FE308FDA28B25EB900FE3F33 /* CitiesViewController + searchBar.swift in Sources */,
 				FE29392728B02B5A00D606BD /* PharosIosAssignment.xcdatamodeld in Sources */,
+				FE308FB328B1B39000FE3F33 /* ImageService.swift in Sources */,
 				FE29391F28B02B5A00D606BD /* SceneDelegate.swift in Sources */,
+				FE308FE028B2634A00FE3F33 /* CItyMapViewController.swift in Sources */,
 				FE29397728B0400400D606BD /* CitiesTableViewCell.swift in Sources */,
+				FE308FBE28B23E0200FE3F33 /* UIImageView + Cache.swift in Sources */,
+				FE308FE528B2681900FE3F33 /* MapObject.swift in Sources */,
+				FE308FA028B1671E00FE3F33 /* CitiesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

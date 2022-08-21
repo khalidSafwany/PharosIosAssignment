@@ -12,7 +12,7 @@ struct City: Codable{
     
      private var countrySymbols: String?
      private var cityName: String?
-     private var cityId: Int?
+     private var cityId: String?
      private var cityCooridnates: Coordinates?
     
     private enum CodingKeys: String, CodingKey{
@@ -44,13 +44,13 @@ struct City: Codable{
         self.cityName = cityName
     }
     
-    func getCityId() -> Int?{
+    func getCityId() -> String?{
         
         self.cityId
         
     }
     
-    mutating func setCityId(cityId: Int?){
+    mutating func setCityId(cityId: String?){
         
         self.cityId = cityId
     }

@@ -7,23 +7,17 @@
 
 import UIKit
 
-class CitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+class CitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+    
+    
+    
+    private var citiesViewModel: CitiesViewModel?
+    
+    private var citiesList = [City]()
+    
+    func getCitiesViewMode() -> CitiesViewModel?{
+        return citiesViewModel ?? CitiesViewModel()
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cityCell = citiesTableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as?
-            CitiesTableViewCell
-        
-        
-        cityCell?.setMyDate()
-        
-        return cityCell!
-    }
-    
-    
-    
     
     var citiesTableView: UITableView = {
         let tableView:UITableView
@@ -57,28 +51,38 @@ class CitiesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.white
-      //  setUpViewModel()
+        self.title = "Cities"
         setCitiesSearchBarConstraints()
         setCitiesTableViewConstraints()
         citiesTableView.delegate = self
         citiesTableView.dataSource = self
+        citiesTableView.prefetchDataSource = self
+        citiesSearchBar.delegate = self
+        setUpViewModel()
+        DispatchQueue.global().async() {
+            self.citiesViewModel?.getCities()
+        }
+        
         
     }
 
-//    private func setUpViewModel(){
-//        photosViewModel.bindPhotosViewModelToView = {
-//
-//            self.onSuccessUpdateView()
-//
-//        }
-//
-//        photosViewModel.bindViewModelErrorToView = {
-//
-//            self.onFailUpdateView()
-//
-//        }
-//
-//        photosViewModel.bindPreviousSearchTextToView = {
+    private func setUpViewModel(){
+        citiesViewModel = CitiesViewModel()
+        citiesViewModel?.bindViewModelSuccessToView = {
+
+            self.onSuccessUpdateView()
+
+        }
+
+        citiesViewModel?.bindViewModelErrorToView = {
+
+            self.onFailUpdateView()
+
+        }
+        
+        
+
+//        citiesViewModel.bindPreviousSearchTextToView = {
 //            DispatchQueue.main.async {
 //            if (self.photosSearchBar.text?.isEmpty ?? false){
 //            self.showHistoryTableview()
@@ -89,9 +93,31 @@ class CitiesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //            }
 //            }
 //        }
-//    }
+    }
     
     
+    private func onSuccessUpdateView(){
+        citiesList = (citiesViewModel?.getCurrentCitiesList())!
+        DispatchQueue.main.async { [weak self] in
+            self?.citiesTableView.reloadData()
+
+        }
+        
+    }
+    
+    
+    func onFailUpdateView(){
+        let alert = UIAlertController(title: "Error", message: citiesViewModel?.showError, preferredStyle: .alert)
+        
+        let okAction  = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in
+            
+            
+        }
+        
+        
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     private func setCitiesSearchBarConstraints(){
         
@@ -122,5 +148,41 @@ class CitiesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
     }
-}
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        citiesList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cityCell = citiesTableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as?
+            CitiesTableViewCell
+        
+        
+        cityCell?.setMyDate(cellCity: citiesList[indexPath.row])
+        
+        return cityCell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UIScreen.main.bounds.height * 0.2
+    }
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if citiesSearchBar.text == ""{
+        if indexPaths.last?.row ?? 0 > (citiesList.count - 2){
+            citiesViewModel?.getCities()
+        }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mapViewController = CItyMapViewController() // OR use storyboard.instantiate
+        mapViewController.setSelectedCity(citiesList[indexPath.row])
+
+        self.navigationController?.pushViewController(mapViewController, animated: true)
+            }
+    }
+
 

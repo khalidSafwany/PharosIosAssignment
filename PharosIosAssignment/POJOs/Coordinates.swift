@@ -9,27 +9,27 @@ import Foundation
 
 struct Coordinates: Codable{
    
-    private var longitude: Float?
-    private var latitude: Float?
+    private var longitude: String?
+    private var latitude: String?
    
-   func getCitylongitude() -> Float?{
+   func getCitylongitude() -> String?{
        
        self.longitude
        
    }
    
-   mutating func setCitylongitude(longitude: Float?){
+   mutating func setCitylongitude(longitude: String?){
        
        self.longitude = longitude
    }
    
-   func getCitylatitude() -> Float?{
+   func getCitylatitude() -> String?{
        
        self.latitude
        
    }
    
-   mutating func setCitylatitude(latitude: Float?){
+   mutating func setCitylatitude(latitude: String?){
        
        self.latitude = latitude
    }
